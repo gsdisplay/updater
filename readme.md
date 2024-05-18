@@ -1,1 +1,1 @@
-Hello World!!!
+This will update the MagicMirror directory based on the update.sh file
