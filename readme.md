@@ -1,1 +1,1 @@
-This will update the MagicMirror directory based on the update.sh file.  
+This will update the MagicMirror directory based on the update.sh file!
