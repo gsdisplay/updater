@@ -29,7 +29,7 @@ function copyFileDirectory(){
 //copy files from updater directory to MagicMirror directory
   let result = "error";
   try{
-    let copyResult = execSync('cp -a '+mmPath+' '+homePath);
+    let copyResult = execSync('cp -a '+mmPath+' '+envVars.homePath);
     result = "Success: "+copyResult;   
   }
   catch(error){
