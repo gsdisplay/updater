@@ -2,6 +2,7 @@
 const fs = require('node:fs');
 const { execSync } = require('child_process');
 const {envVars}  = require('/home/pi/Scripts/updater/env.js');
+const outputLog = fs.createWriteStream('./logs/runnerOutput.log',{flags:'a'});
 
 let localPath = envVars.homePath+'/MagicMirror/gsversion.json';
 let remotePath = envVars.homePath+'/Scripts/updater/version.json';
@@ -14,22 +15,32 @@ let localVersionData = JSON.parse(localVersion)
 //console.log(localVersionData);
 //console.log("COMPARE: "+updaterVersionData.about.version +" - "+ localVersionData.about.version);
 
+let msg = "-----------------------"+new Date().toUTCString+"-----------------------"+
+console.log(msg);
+outputLog.write(msg + '\n');
 if(updaterVersionData.about.version > localVersionData.about.version){
-  console.log("New Version "+updaterVersionData.about.version+" is newer than installed version "+localVersionData.about.version)
+
+  let logMessage = "New Version "+updaterVersionData.about.version+" is newer than installed version "+localVersionData.about.version;
+  console.log(logMessage)
+  outputLog.write(logMessage + '\n');
   let result = copyFileDirectory();
   console.log(result);
-  
+  outputLog.write(result + '\n');
+
+  //can I log to a file???????????/
 }
 else{
-  console.log("New Version "+updaterVersionData.about.version+" is not newer than installed version "+localVersionData.about.version)
+  let logMessage = "New Version "+updaterVersionData.about.version+" is not newer than installed version "+localVersionData.about.version;
+  outputLog.write(logMessage + '\n');
 
 }
+/** BE SURE TO UPDATE THE LOCAL VERSION NUMBER OR ELSE THIS RUNS EVERY DAMN TIME */
 
 function copyFileDirectory(){
 //copy files from updater directory to MagicMirror directory
   let result = "error";
   try{
-    let copyResult = execSync('cp -a '+mmPath+' '+envVars.homePath);
+    let copyResult = execSync('cp --verbose -a '+mmPath+' '+envVars.homePath);
     result = "Success: "+copyResult;   
   }
   catch(error){
