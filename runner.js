@@ -15,9 +15,9 @@ let localVersionData = JSON.parse(localVersion)
 //console.log(localVersionData);
 //console.log("COMPARE: "+updaterVersionData.about.version +" - "+ localVersionData.about.version);
 
-let msg = "-----------------------"+new Date().toUTCString+"-----------------------";
-console.log(msg);
-outputLog.write(msg + '\n');
+let logMsg = "-----------------------"+new Date().toUTCString+"-----------------------";
+console.log(logMsg);
+outputLog.write(logMsg + '\n');
 if(updaterVersionData.about.version > localVersionData.about.version){
 
   let logMessage = "New Version "+updaterVersionData.about.version+" is newer than installed version "+localVersionData.about.version;
