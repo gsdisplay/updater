@@ -760,6 +760,7 @@
       /*top:-153px;*//*-83px; changed due to Jan 2024 MM update*/
       font-family: SF-Thin;
           /*font-family:'Roboto', sans-serif;*/
+    color:blue;
   }
   .date.normal.medium{ /*Date*/
       position:relative;
