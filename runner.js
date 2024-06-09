@@ -40,9 +40,9 @@ function doUpdates(){
 
     }
     if(continueUpdate){
-      let updatedVersion =  updateLocalVersion();
       console.log(updatedVersion+ "running updateLocalVersion()");
       outputLog.write(updatedVersion+ "running updateLocalVersion()");
+      let updatedVersion =  updateLocalVersion();
     }
   }
   catch(err){
