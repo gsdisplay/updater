@@ -15,7 +15,7 @@ let localVersionData = JSON.parse(localVersion)
 //console.log(localVersionData);
 //console.log("COMPARE: "+updaterVersionData.about.version +" - "+ localVersionData.about.version);
 
-let msg = "-----------------------"+new Date().toUTCString+"-----------------------"+
+let msg = "-----------------------"+new Date().toUTCString+"-----------------------";
 console.log(msg);
 outputLog.write(msg + '\n');
 if(updaterVersionData.about.version > localVersionData.about.version){
