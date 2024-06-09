@@ -2,7 +2,7 @@
 const fs = require('node:fs');
 const { execSync } = require('child_process');
 const {envVars}  = require('/home/pi/Scripts/updater/env.js');
-const outputLog = fs.createWriteStream(envVars.updaterFolder+'logs/runnerOutput.log',{flags:'a'});
+const outputLog = fs.createWriteStream(envVars.homePath+'/Scripts/logs/runnerOutput.log',{flags:'a'});
 
 let localVersionPath = envVars.homePath+'/MagicMirror/gsversion.json';
 let remoteVersionPath = envVars.updaterFolder+'version.json';
