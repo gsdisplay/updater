@@ -40,9 +40,11 @@ function doUpdates(){
 
     }
     if(continueUpdate){
-      console.log(updatedVersion+ "running updateLocalVersion()");
-      outputLog.write(updatedVersion+ "running updateLocalVersion()");
+      console.log("running updateLocalVersion()");
+      outputLog.write("running updateLocalVersion()");
       let updatedVersion =  updateLocalVersion();
+      console.log("ran updateLocalVersion(): "+updatedVersion);
+      outputLog.write("ran updateLocalVersion(): "+updatedVersion);
     }
   }
   catch(err){
