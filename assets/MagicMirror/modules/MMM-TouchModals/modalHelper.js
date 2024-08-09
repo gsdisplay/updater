@@ -174,6 +174,23 @@ function toggleSettingsMenu(){
       notifcationArea.classList.toggle('show');
 }
 
+function hasIP(){
+	if(global.IP.length>0)
+		return true;
+	else
+		return false;
+}
+//in event of black screen, maybe this will work
+setTimeout(function(){
+	const online = hasIP();
+	console.log("HAS IP: "+hasIP());
+	if(!online){
+		let retVal = confirm("It looks like it's taking a while to load.  Click 'OK' to reload the page, or 'Cancel' to wait.");
+		if(retVal == true)
+			location.reload();
+	}
+},30000);
+
 //could try 2-finger touch:
 
 
