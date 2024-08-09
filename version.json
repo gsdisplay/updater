@@ -1,5 +1,5 @@
 {"about": {  
-  "version": "20240610.58",  
-  "version-friendly": "Jun 10, 2024",
-  "notes":"Just a lil test"
+  "version": "20240809",  
+  "version-friendly": "Aug 9, 2024",
+  "notes":"Added QR code retry logic"
 }}  
