@@ -47,8 +47,10 @@ Module.register("MMM-QRCode", {
 		if(notification === "IP") {
 			console.log(payload)
 			this.IP = payload;
-			if(this.IP.length>5)
+			if(this.IP.length>5){
 				this.updateDom();
+				global.IP = this.IP;
+			}
 			else{
 				//fallback to hostname...hopefully it works.
 				this.IP = "greenscreen";	
