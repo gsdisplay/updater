@@ -96,7 +96,7 @@ Module.register("MMM-QRCode", {
 		if(this.config.showRaw) {
 			const textEl = document.createElement("div");
 			textEl.classList.add('qrcode__text');
-			textEl.innerHTML = this.config.text;
+			textEl.innerHTML = "Scan to Customize"//this.config.text;
 			wrapperEl.appendChild(textEl);
 		}
 
