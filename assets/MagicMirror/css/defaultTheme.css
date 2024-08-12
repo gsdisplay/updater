@@ -127,7 +127,11 @@ span#grlogo {
 }
 .li-t div#qrcodewrapper {
   position: relative;
-  right: 10px;
+}
+div#qrcodewrapper img{
+  text-align:center;
+  width:130px;
+  height:130px;
 }
 li.li-t.li-settings {
   border-bottom: none;
