@@ -1,986 +1,1003 @@
 /*------------------from main.css----------------*/
 @font-face{
-    font-family: SF;
-    src: url("SF-Pro-Display-Light.otf") format("opentype");
-  }
-  @font-face{
-    font-family: SF-Thin;
-    src: url("SF-Pro-Display-Thin.otf") format("opentype");
-  }
-  @font-face{
-    font-family: SF-UltraThin;
-    src: url("SF-Pro-Text-Ultralight.otf") format("opentype");
-  }
-  body {
-    margin: 60px;
-    position: absolute;
-    height: calc(100% - 120px);
-    width: calc(100% - 120px);
-    background: #000;
-    color: #aaa;
-    /*font-family: "Roboto Condensed", sans-serif;*/
-    font-family: SF;
-    font-weight: 100;
-    font-size: 2em;
-    line-height: 1.5em;
-    -webkit-font-smoothing: antialiased;
-  }
-  
-  /*Jan 2024 main.css fixes */
-  :root {
-    --font-size:inherit;
-    --gap-body-right: 80px;
-  }
-  
-  /*-------------------------------------- layout -----------------------------------*/
-  
-    body{
-      zoom:75%;
-     /* margin-left:40px;*/
-  }
-  
-  .region.top.center {
-      left: 50.5%;
-      transform: translateX(-37%);
-      min-width: 81%;
-  }
-  
-  .region.left{
-     left:-50px;
-  }
-  .region.top.left{
-    top:-90px
-  }
-  .region.bottom .module {
-    margin: 0px;
-  }
-  .region.bottom.left{
-    margin-bottom:-50px;
-  }
-  /*-------------------------------------- newsfeed ----------------------------------*/
-  div.newsfeed {
-    position: absolute !important;
-    margin-left:auto !important;
-    margin-right:auto !important;
-    width:100%;
-    display:flex;
-    justify-content:center;
-  }
-  
-  div.newsfeed .module-content{
-    background:#0000003b;
-    padding:2px 12px 7px 12px;
-    border-radius:8px;
-  }
-  .newsfeed-title.bright.medium.light {
-    font-weight:600;
-  }
-  .newsfeed-source.light.small.dimmed {
-    color:#9E9E9E;
-    font-weight:600;
-  }
-  iframe.newsfeed-fullarticle {
-    width: 100vw;
-  
-    /* very large height value to allow scrolling */
-    height: 50vw;
-    top: 300px;
-    left: auto;
-    border: 20px solid white;
-    z-index: 1;
-    background: white;
-    position: relative;
-    border-radius: 30px;
-  }
-  /*-------------------------------------- wallpaper ----------------------------------*/
-  /*remove for fullscreen*/
-  .MMM-Wallpaper .wallpaper {
-    object-fit: cover; /*can try 'none' if its squished, but it might zoom in too much*/
-    width: 600px;
-    height: 1440px;
-  }
-  
-  /*-------------------------------------- Touch Buttons ----------------------------------*/
-  
-  div[id*="MMM-SmartTouch"] {
-    position:relative;
-     top:40px;
-     /*left:-20px;*/
-    font-size:3em;
-  }
-  
-  span#grlogo {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' zoomAndPan='magnify' preserveAspectRatio='xMidYMid meet' version='1.0' viewBox='13.81 170.36 342.13 37.73'%3E%3Cdefs%3E%3Cg/%3E%3C/defs%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cg transform='translate(11.435269, 197.407854)'%3E%3Cg%3E%3Cpath d='M 29.417969 -27.042969 L 9.164062 -27.042969 C 5.65625 -27.042969 2.375 -26.703125 2.375 -21.949219 L 2.375 -5.089844 C 2.375 -0.339844 5.65625 0 9.164062 0 L 22.6875 0 L 22.6875 2.660156 C 22.6875 4.242188 21.722656 4.300781 20.195312 4.300781 L 2.375 4.300781 L 2.375 10.691406 L 22.628906 10.691406 C 26.136719 10.691406 29.417969 10.351562 29.417969 5.601562 Z M 9.109375 -19.007812 C 9.109375 -20.59375 10.070312 -20.648438 11.597656 -20.648438 L 22.6875 -20.648438 L 22.6875 -6.394531 L 11.597656 -6.394531 C 10.070312 -6.394531 9.109375 -6.449219 9.109375 -8.035156 Z M 9.109375 -19.007812 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cg transform='translate(46.110762, 197.407854)'%3E%3Cg%3E%3Cpath d='M 16.179688 -20.648438 L 16.179688 -27.042969 L 2.660156 -27.042969 L 2.660156 0 L 9.390625 0 L 9.390625 -20.648438 Z M 16.179688 -20.648438 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cg transform='translate(66.192144, 197.407854)'%3E%3Cg%3E%3Cpath d='M 2.375 -5.089844 C 2.375 -0.339844 5.65625 0 9.164062 0 L 29.417969 0 L 29.417969 -6.394531 L 11.597656 -6.394531 C 10.070312 -6.394531 9.109375 -6.449219 9.109375 -8.035156 L 9.109375 -10.351562 L 29.417969 -10.351562 L 29.417969 -21.949219 C 29.417969 -26.703125 26.136719 -27.042969 22.628906 -27.042969 L 9.164062 -27.042969 C 5.65625 -27.042969 2.375 -26.703125 2.375 -21.949219 Z M 9.109375 -19.007812 C 9.109375 -20.59375 10.070312 -20.648438 11.597656 -20.648438 L 20.195312 -20.648438 C 21.722656 -20.648438 22.6875 -20.59375 22.6875 -19.007812 L 22.6875 -16.746094 L 9.109375 -16.746094 Z M 9.109375 -19.007812 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cg transform='translate(100.584807, 197.407854)'%3E%3Cg%3E%3Cpath d='M 2.375 -5.089844 C 2.375 -0.339844 5.65625 0 9.164062 0 L 29.417969 0 L 29.417969 -6.394531 L 11.597656 -6.394531 C 10.070312 -6.394531 9.109375 -6.449219 9.109375 -8.035156 L 9.109375 -10.351562 L 29.417969 -10.351562 L 29.417969 -21.949219 C 29.417969 -26.703125 26.136719 -27.042969 22.628906 -27.042969 L 9.164062 -27.042969 C 5.65625 -27.042969 2.375 -26.703125 2.375 -21.949219 Z M 9.109375 -19.007812 C 9.109375 -20.59375 10.070312 -20.648438 11.597656 -20.648438 L 20.195312 -20.648438 C 21.722656 -20.648438 22.6875 -20.59375 22.6875 -19.007812 L 22.6875 -16.746094 L 9.109375 -16.746094 Z M 9.109375 -19.007812 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cg transform='translate(134.977471, 197.407854)'%3E%3Cg%3E%3Cpath d='M 22.96875 0 L 29.699219 0 L 29.699219 -21.949219 C 29.699219 -26.703125 26.417969 -27.042969 22.910156 -27.042969 L 2.660156 -27.042969 L 2.660156 0 L 9.390625 0 L 9.390625 -20.648438 L 20.480469 -20.648438 C 22.007812 -20.648438 22.96875 -20.59375 22.96875 -19.007812 Z M 22.96875 0 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%2372b11c' fill-opacity='1'%3E%3Cg transform='translate(169.661821, 197.407854)'%3E%3Cg%3E%3Cpath d='M 2.375 -15.445312 C 2.375 -10.691406 5.65625 -10.351562 9.164062 -10.351562 L 20.195312 -10.351562 C 21.722656 -10.351562 22.6875 -10.296875 22.6875 -8.710938 L 22.6875 -8.035156 C 22.6875 -6.449219 21.722656 -6.394531 20.195312 -6.394531 L 2.375 -6.394531 L 2.375 0 L 22.628906 0 C 26.136719 0 29.417969 -0.339844 29.417969 -5.089844 L 29.417969 -11.652344 C 29.417969 -16.40625 26.078125 -16.746094 22.574219 -16.746094 L 11.597656 -16.746094 C 10.070312 -16.746094 9.109375 -16.800781 9.109375 -18.386719 L 9.109375 -19.007812 C 9.109375 -20.59375 10.070312 -20.648438 11.597656 -20.648438 L 29.417969 -20.648438 L 29.417969 -27.042969 L 9.164062 -27.042969 C 5.65625 -27.042969 2.375 -26.703125 2.375 -22.007812 Z M 2.375 -15.445312 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%2372b11c' fill-opacity='1'%3E%3Cg transform='translate(204.054485, 197.407854)'%3E%3Cg%3E%3Cpath d='M 29.417969 -6.394531 L 11.597656 -6.394531 C 10.070312 -6.394531 9.109375 -6.449219 9.109375 -8.035156 L 9.109375 -19.007812 C 9.109375 -20.59375 10.070312 -20.648438 11.597656 -20.648438 L 29.417969 -20.648438 L 29.417969 -27.042969 L 9.164062 -27.042969 C 5.65625 -27.042969 2.375 -26.703125 2.375 -21.949219 L 2.375 -5.089844 C 2.375 -0.339844 5.65625 0 9.164062 0 L 29.417969 0 Z M 29.417969 -6.394531 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%2372b11c' fill-opacity='1'%3E%3Cg transform='translate(237.372388, 197.407854)'%3E%3Cg%3E%3Cpath d='M 16.179688 -20.648438 L 16.179688 -27.042969 L 2.660156 -27.042969 L 2.660156 0 L 9.390625 0 L 9.390625 -20.648438 Z M 16.179688 -20.648438 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%2372b11c' fill-opacity='1'%3E%3Cg transform='translate(257.453769, 197.407854)'%3E%3Cg%3E%3Cpath d='M 2.375 -5.089844 C 2.375 -0.339844 5.65625 0 9.164062 0 L 29.417969 0 L 29.417969 -6.394531 L 11.597656 -6.394531 C 10.070312 -6.394531 9.109375 -6.449219 9.109375 -8.035156 L 9.109375 -10.351562 L 29.417969 -10.351562 L 29.417969 -21.949219 C 29.417969 -26.703125 26.136719 -27.042969 22.628906 -27.042969 L 9.164062 -27.042969 C 5.65625 -27.042969 2.375 -26.703125 2.375 -21.949219 Z M 9.109375 -19.007812 C 9.109375 -20.59375 10.070312 -20.648438 11.597656 -20.648438 L 20.195312 -20.648438 C 21.722656 -20.648438 22.6875 -20.59375 22.6875 -19.007812 L 22.6875 -16.746094 L 9.109375 -16.746094 Z M 9.109375 -19.007812 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%2372b11c' fill-opacity='1'%3E%3Cg transform='translate(291.846433, 197.407854)'%3E%3Cg%3E%3Cpath d='M 2.375 -5.089844 C 2.375 -0.339844 5.65625 0 9.164062 0 L 29.417969 0 L 29.417969 -6.394531 L 11.597656 -6.394531 C 10.070312 -6.394531 9.109375 -6.449219 9.109375 -8.035156 L 9.109375 -10.351562 L 29.417969 -10.351562 L 29.417969 -21.949219 C 29.417969 -26.703125 26.136719 -27.042969 22.628906 -27.042969 L 9.164062 -27.042969 C 5.65625 -27.042969 2.375 -26.703125 2.375 -21.949219 Z M 9.109375 -19.007812 C 9.109375 -20.59375 10.070312 -20.648438 11.597656 -20.648438 L 20.195312 -20.648438 C 21.722656 -20.648438 22.6875 -20.59375 22.6875 -19.007812 L 22.6875 -16.746094 L 9.109375 -16.746094 Z M 9.109375 -19.007812 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%2372b11c' fill-opacity='1'%3E%3Cg transform='translate(326.239097, 197.407854)'%3E%3Cg%3E%3Cpath d='M 22.96875 0 L 29.699219 0 L 29.699219 -21.949219 C 29.699219 -26.703125 26.417969 -27.042969 22.910156 -27.042969 L 2.660156 -27.042969 L 2.660156 0 L 9.390625 0 L 9.390625 -20.648438 L 20.480469 -20.648438 C 22.007812 -20.648438 22.96875 -20.59375 22.96875 -19.007812 Z M 22.96875 0 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-size: 5%; 
-    background-attachment: fixed;
-    background-position: bottom 2px right 65px;
-    width: 390px !important;
-    display: inline-block;
-    height: 35px;
-    position: fixed;
-  }
-  .st-container__main-menu {
-    background:  rgb(54 121 43 / 86%);
-    transition: all ease 0.2s;
-    border: 0px solid #eee;
-  }
-  .li-t div#qrcodewrapper {
-    position: relative;
-    right: 10px;
-  }
-  li.li-t.li-settings {
-    border-bottom: none;
-    line-height: 1.5em;
-  }
-  li.li-t.li-qr {
-    padding-top: 0px;
-  }
-  
-  span.fa.fa-sliders.fa-3x {
-    padding-bottom: 10px;
-  }
-  span.menu-text {
-    display: inline-block;
-    width: 130px;
-    white-space: pre-wrap;
-    text-align: center;
-    line-height: 20px;
-  }
-  
-  
-  /*------------------------------------- App/Dashboard------------------------------------*/
-  div.MMM-TouchModals {
-    width:900px;
-     display:inline-block;
-     top:-50px;
-     left:800px;
+  font-family: SF;
+  src: url("SF-Pro-Display-Light.otf") format("opentype");
+}
+@font-face{
+  font-family: SF-Thin;
+  src: url("SF-Pro-Display-Thin.otf") format("opentype");
+}
+@font-face{
+  font-family: SF-UltraThin;
+  src: url("SF-Pro-Text-Ultralight.otf") format("opentype");
+}
+body {
+  margin: 60px;
+  position: absolute;
+  height: calc(100% - 120px);
+  width: calc(100% - 120px);
+  background: #000;
+  color: #aaa;
+  /*font-family: "Roboto Condensed", sans-serif;*/
+  font-family: SF;
+  font-weight: 100;
+  font-size: 2em;
+  line-height: 1.5em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*Jan 2024 main.css fixes */
+:root {
+  --font-size:inherit;
+  --gap-body-right: 80px;
+}
+
+/*-------------------------------------- layout -----------------------------------*/
+
+  body{
+    zoom:75%;
+   /* margin-left:40px;*/
+}
+
+.region.top.center {
+    left: 50.5%;
+    transform: translateX(-37%);
+    min-width: 81%;
+}
+
+.region.left{
+   left:-50px;
+}
+.region.top.left{
+  top:-90px
+}
+.region.bottom .module {
+  margin: 0px;
+}
+.region.bottom.left{
+  margin-bottom:-50px;
+}
+/*-------------------------------------- newsfeed ----------------------------------*/
+div.newsfeed {
+  position: absolute !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+
+div.newsfeed .module-content{
+  background:#0000003b;
+  padding:2px 12px 7px 12px;
+  border-radius:8px;
+}
+.newsfeed-title.bright.medium.light {
+  font-weight:600;
+}
+.newsfeed-source.light.small.dimmed {
+  color:#9E9E9E;
+  font-weight:600;
+}
+iframe.newsfeed-fullarticle {
+  width: 100vw;
+
+  /* very large height value to allow scrolling */
+  height: 50vw;
+  top: 300px;
+  left: auto;
+  border: 20px solid white;
+  z-index: 1;
+  background: white;
+  position: relative;
+  border-radius: 30px;
+}
+/*-------------------------------------- wallpaper ----------------------------------*/
+/*remove for fullscreen*/
+.MMM-Wallpaper .wallpaper {
+  object-fit: cover; /*can try 'none' if its squished, but it might zoom in too much*/
+  width: 600px;
+  height: 1440px;
+}
+
+/*-------------------------------------- Touch Buttons ----------------------------------*/
+
+div[id*="MMM-SmartTouch"] {
+  position:relative;
+   top:40px;
+   /*left:-20px;*/
+  font-size:3em;
+}
+
+span#grlogo {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' zoomAndPan='magnify' preserveAspectRatio='xMidYMid meet' version='1.0' viewBox='13.81 170.36 342.13 37.73'%3E%3Cdefs%3E%3Cg/%3E%3C/defs%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cg transform='translate(11.435269, 197.407854)'%3E%3Cg%3E%3Cpath d='M 29.417969 -27.042969 L 9.164062 -27.042969 C 5.65625 -27.042969 2.375 -26.703125 2.375 -21.949219 L 2.375 -5.089844 C 2.375 -0.339844 5.65625 0 9.164062 0 L 22.6875 0 L 22.6875 2.660156 C 22.6875 4.242188 21.722656 4.300781 20.195312 4.300781 L 2.375 4.300781 L 2.375 10.691406 L 22.628906 10.691406 C 26.136719 10.691406 29.417969 10.351562 29.417969 5.601562 Z M 9.109375 -19.007812 C 9.109375 -20.59375 10.070312 -20.648438 11.597656 -20.648438 L 22.6875 -20.648438 L 22.6875 -6.394531 L 11.597656 -6.394531 C 10.070312 -6.394531 9.109375 -6.449219 9.109375 -8.035156 Z M 9.109375 -19.007812 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cg transform='translate(46.110762, 197.407854)'%3E%3Cg%3E%3Cpath d='M 16.179688 -20.648438 L 16.179688 -27.042969 L 2.660156 -27.042969 L 2.660156 0 L 9.390625 0 L 9.390625 -20.648438 Z M 16.179688 -20.648438 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cg transform='translate(66.192144, 197.407854)'%3E%3Cg%3E%3Cpath d='M 2.375 -5.089844 C 2.375 -0.339844 5.65625 0 9.164062 0 L 29.417969 0 L 29.417969 -6.394531 L 11.597656 -6.394531 C 10.070312 -6.394531 9.109375 -6.449219 9.109375 -8.035156 L 9.109375 -10.351562 L 29.417969 -10.351562 L 29.417969 -21.949219 C 29.417969 -26.703125 26.136719 -27.042969 22.628906 -27.042969 L 9.164062 -27.042969 C 5.65625 -27.042969 2.375 -26.703125 2.375 -21.949219 Z M 9.109375 -19.007812 C 9.109375 -20.59375 10.070312 -20.648438 11.597656 -20.648438 L 20.195312 -20.648438 C 21.722656 -20.648438 22.6875 -20.59375 22.6875 -19.007812 L 22.6875 -16.746094 L 9.109375 -16.746094 Z M 9.109375 -19.007812 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cg transform='translate(100.584807, 197.407854)'%3E%3Cg%3E%3Cpath d='M 2.375 -5.089844 C 2.375 -0.339844 5.65625 0 9.164062 0 L 29.417969 0 L 29.417969 -6.394531 L 11.597656 -6.394531 C 10.070312 -6.394531 9.109375 -6.449219 9.109375 -8.035156 L 9.109375 -10.351562 L 29.417969 -10.351562 L 29.417969 -21.949219 C 29.417969 -26.703125 26.136719 -27.042969 22.628906 -27.042969 L 9.164062 -27.042969 C 5.65625 -27.042969 2.375 -26.703125 2.375 -21.949219 Z M 9.109375 -19.007812 C 9.109375 -20.59375 10.070312 -20.648438 11.597656 -20.648438 L 20.195312 -20.648438 C 21.722656 -20.648438 22.6875 -20.59375 22.6875 -19.007812 L 22.6875 -16.746094 L 9.109375 -16.746094 Z M 9.109375 -19.007812 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cg transform='translate(134.977471, 197.407854)'%3E%3Cg%3E%3Cpath d='M 22.96875 0 L 29.699219 0 L 29.699219 -21.949219 C 29.699219 -26.703125 26.417969 -27.042969 22.910156 -27.042969 L 2.660156 -27.042969 L 2.660156 0 L 9.390625 0 L 9.390625 -20.648438 L 20.480469 -20.648438 C 22.007812 -20.648438 22.96875 -20.59375 22.96875 -19.007812 Z M 22.96875 0 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%2372b11c' fill-opacity='1'%3E%3Cg transform='translate(169.661821, 197.407854)'%3E%3Cg%3E%3Cpath d='M 2.375 -15.445312 C 2.375 -10.691406 5.65625 -10.351562 9.164062 -10.351562 L 20.195312 -10.351562 C 21.722656 -10.351562 22.6875 -10.296875 22.6875 -8.710938 L 22.6875 -8.035156 C 22.6875 -6.449219 21.722656 -6.394531 20.195312 -6.394531 L 2.375 -6.394531 L 2.375 0 L 22.628906 0 C 26.136719 0 29.417969 -0.339844 29.417969 -5.089844 L 29.417969 -11.652344 C 29.417969 -16.40625 26.078125 -16.746094 22.574219 -16.746094 L 11.597656 -16.746094 C 10.070312 -16.746094 9.109375 -16.800781 9.109375 -18.386719 L 9.109375 -19.007812 C 9.109375 -20.59375 10.070312 -20.648438 11.597656 -20.648438 L 29.417969 -20.648438 L 29.417969 -27.042969 L 9.164062 -27.042969 C 5.65625 -27.042969 2.375 -26.703125 2.375 -22.007812 Z M 2.375 -15.445312 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%2372b11c' fill-opacity='1'%3E%3Cg transform='translate(204.054485, 197.407854)'%3E%3Cg%3E%3Cpath d='M 29.417969 -6.394531 L 11.597656 -6.394531 C 10.070312 -6.394531 9.109375 -6.449219 9.109375 -8.035156 L 9.109375 -19.007812 C 9.109375 -20.59375 10.070312 -20.648438 11.597656 -20.648438 L 29.417969 -20.648438 L 29.417969 -27.042969 L 9.164062 -27.042969 C 5.65625 -27.042969 2.375 -26.703125 2.375 -21.949219 L 2.375 -5.089844 C 2.375 -0.339844 5.65625 0 9.164062 0 L 29.417969 0 Z M 29.417969 -6.394531 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%2372b11c' fill-opacity='1'%3E%3Cg transform='translate(237.372388, 197.407854)'%3E%3Cg%3E%3Cpath d='M 16.179688 -20.648438 L 16.179688 -27.042969 L 2.660156 -27.042969 L 2.660156 0 L 9.390625 0 L 9.390625 -20.648438 Z M 16.179688 -20.648438 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%2372b11c' fill-opacity='1'%3E%3Cg transform='translate(257.453769, 197.407854)'%3E%3Cg%3E%3Cpath d='M 2.375 -5.089844 C 2.375 -0.339844 5.65625 0 9.164062 0 L 29.417969 0 L 29.417969 -6.394531 L 11.597656 -6.394531 C 10.070312 -6.394531 9.109375 -6.449219 9.109375 -8.035156 L 9.109375 -10.351562 L 29.417969 -10.351562 L 29.417969 -21.949219 C 29.417969 -26.703125 26.136719 -27.042969 22.628906 -27.042969 L 9.164062 -27.042969 C 5.65625 -27.042969 2.375 -26.703125 2.375 -21.949219 Z M 9.109375 -19.007812 C 9.109375 -20.59375 10.070312 -20.648438 11.597656 -20.648438 L 20.195312 -20.648438 C 21.722656 -20.648438 22.6875 -20.59375 22.6875 -19.007812 L 22.6875 -16.746094 L 9.109375 -16.746094 Z M 9.109375 -19.007812 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%2372b11c' fill-opacity='1'%3E%3Cg transform='translate(291.846433, 197.407854)'%3E%3Cg%3E%3Cpath d='M 2.375 -5.089844 C 2.375 -0.339844 5.65625 0 9.164062 0 L 29.417969 0 L 29.417969 -6.394531 L 11.597656 -6.394531 C 10.070312 -6.394531 9.109375 -6.449219 9.109375 -8.035156 L 9.109375 -10.351562 L 29.417969 -10.351562 L 29.417969 -21.949219 C 29.417969 -26.703125 26.136719 -27.042969 22.628906 -27.042969 L 9.164062 -27.042969 C 5.65625 -27.042969 2.375 -26.703125 2.375 -21.949219 Z M 9.109375 -19.007812 C 9.109375 -20.59375 10.070312 -20.648438 11.597656 -20.648438 L 20.195312 -20.648438 C 21.722656 -20.648438 22.6875 -20.59375 22.6875 -19.007812 L 22.6875 -16.746094 L 9.109375 -16.746094 Z M 9.109375 -19.007812 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg fill='%2372b11c' fill-opacity='1'%3E%3Cg transform='translate(326.239097, 197.407854)'%3E%3Cg%3E%3Cpath d='M 22.96875 0 L 29.699219 0 L 29.699219 -21.949219 C 29.699219 -26.703125 26.417969 -27.042969 22.910156 -27.042969 L 2.660156 -27.042969 L 2.660156 0 L 9.390625 0 L 9.390625 -20.648438 L 20.480469 -20.648438 C 22.007812 -20.648438 22.96875 -20.59375 22.96875 -19.007812 Z M 22.96875 0 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 5%; 
+  background-attachment: fixed;
+  background-position: bottom 2px right 65px;
+  width: 390px !important;
+  display: inline-block;
+  height: 35px;
+  position: fixed;
+}
+.st-container__main-menu {
+  background:  rgb(54 121 43 / 86%);
+  transition: all ease 0.2s;
+  border: 0px solid #eee;
+}
+.li-t div#qrcodewrapper {
+  position: relative;
+  right: 10px;
+}
+li.li-t.li-settings {
+  border-bottom: none;
+  line-height: 1.5em;
+}
+li.li-t.li-qr {
+  padding-top: 0px;
+}
+
+span.fa.fa-sliders.fa-3x {
+  padding-bottom: 10px;
+}
+span.menu-text {
+  display: inline-block;
+  width: 130px;
+  white-space: pre-wrap;
+  text-align: center;
+  line-height: 20px;
+}
+
+
+/*------------------------------------- App/Dashboard------------------------------------*/
+div.MMM-TouchModals {
+  width:900px;
+   display:inline-block;
+   top:-50px;
+   left:800px;
+   position:relative !important;
+   /*background-color:red;*/
+}
+div.MMM-TouchModals .li-t {
+text-align:right;
+padding-right:40px
+}
+
+div.camimg img {
+   width:320px;
+border-radius: 20px;
+}
+div.camimg{
+padding:0px;
+margin-top:0px;
+text-align:right;
+padding-right:30px;
+}
+div#camImgParent {
+ font-size:.7em;
+}
+/*div#camImgParent 
+{
+    margin:auto;
+    width:600px;
+}*/
+ div.MMM-SystemStats {
+    width:400px;
      position:relative !important;
-     /*background-color:red;*/
-  }
-  div.MMM-TouchModals .li-t {
-  text-align:right;
-  padding-right:40px
-  }
-  
-  div.camimg img {
-     width:320px;
-  border-radius: 20px;
-  }
-  div.camimg{
+     top:1380px;
+     left:2050px;
+}
+ div.MMM-SystemStats table{
   padding:0px;
-  margin-top:0px;
-  text-align:right;
-  padding-right:30px;
+ }
+ 
+/*-------------------------------------- calendar -----------------------------------*/
+
+
+/*bigger font and wrapping items Jan 19th*/
+.CX2 { 
+    --font-size: 18px;
   }
-  div#camImgParent {
-   font-size:.7em;
-  }
-  /*div#camImgParent 
-  {
-      margin:auto;
-      width:600px;
-  }*/
-   div.MMM-SystemStats {
-      width:400px;
-       position:relative !important;
-       top:1380px;
-       left:2050px;
-  }
-   div.MMM-SystemStats table{
-    padding:0px;
-   }
-   
-  /*-------------------------------------- calendar -----------------------------------*/
+/*mov cal up*/
+.CX2 .module-content {
+    /*box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #EEE;
+    font-family: 'Titillium Web', sans-serif;*/
+    /*THE APPLE FONT MAKES THE HEADERS LOOK TOO FAT, SO I KEPT ROBOTO*/
+    /*font-family:'Roboto', sans-serif;*/
+    font-family: SF-Thin;
   
-  
-  /*bigger font and wrapping items Jan 19th*/
-  .CX2 { 
-      --font-size: 18px;
-    }
-  /*mov cal up*/
-  .CX2 .module-content {
-      /*box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      color: #EEE;
-      font-family: 'Titillium Web', sans-serif;*/
-      /*THE APPLE FONT MAKES THE HEADERS LOOK TOO FAT, SO I KEPT ROBOTO*/
-      /*font-family:'Roboto', sans-serif;*/
-      font-family: SF-Thin;
+    position: relative;
+    top: -50px;
+    left:40px;
+}
+div.timelineSleeve div.passed{
+  opacity: 0.15
+  ;
+}
+.passedday .slotTitle {
+    opacity:0.20;
+}
+div.eventMain{
+  font-family:'Roboto', sans-serif!important; 
+  font-weight:400; /*time looked too light with apple font*/
+}
+div.event{
+    background: linear-gradient(0deg, #0d0d0d 99%, #000 1%);
+    color: white !important;
+}
+
+
+.CX2 .event.fullday { /*remove sliver of white on some black events*/
+    background-color: #0d0d0d;
+}
+.CX2 .event {
+    background-color: #0d0d0d;
+    border-radius: 4px;
+}
+
+.weeksmark { /* hide week number*/
+    display: none;
+}
+
+.CX2 .cellSlot.weekday_7 .slotSubTitle, .CX2 .cellSlot.weekday_6 .slotSubTitle { /*don't make sat or sun a different color*/
+    color: #999;
+}
+
+.slotHeader {
+    background-color: black !important;
+}
+/*.CX2 .cellSlot .slotTitle {
+    font-size: 4em !important;
+    font-weight: 100 !important;
+    top: -20px;
+    position: relative;
     
-      position: relative;
-      top: -50px;
-      left:40px;
-  }
-  div.timelineSleeve div.passed{
-    opacity: 0.15
-    ;
-  }
-  .passedday .slotTitle {
-      opacity:0.20;
-  }
-  div.eventMain{
-    font-family:'Roboto', sans-serif!important; 
-    font-weight:400; /*time looked too light with apple font*/
-  }
-  div.event{
-      background: linear-gradient(0deg, #0d0d0d 99%, #000 1%);
-      color: white !important;
-  }
-  
-  
-  .CX2 .event.fullday { /*remove sliver of white on some black events*/
-      background-color: #0d0d0d;
-  }
-  .CX2 .event {
-      background-color: #0d0d0d;
-      border-radius: 4px;
-  }
-  
-  .weeksmark { /* hide week number*/
-      display: none;
-  }
-  
-  .CX2 .cellSlot.weekday_7 .slotSubTitle, .CX2 .cellSlot.weekday_6 .slotSubTitle { /*don't make sat or sun a different color*/
-      color: #999;
-  }
-  
-  .slotHeader {
-      background-color: black !important;
-  }
-  /*.CX2 .cellSlot .slotTitle {
-      font-size: 4em !important;
-      font-weight: 100 !important;
-      top: -20px;
-      position: relative;
-      
-  }*/
-  .CX2 .cellSlot .slotTitle {
-    font-size: 3.6em !important;
-    font-weight: 200 !important;
-    top: -10px;
-  }
-  /*center and color date number  */
-  .CX2 .slotHeader {
-      display: block;
-  }
-  div.today div.slotHeader {
-      display: block;
-  
-  }
-  div.today div.slotHeader div.slotTitle {
-      color:red;
-      font-weight: 300 !important;
-  }
-  div.slotHeader div.slotTitle { /*move numbers up a bit more*/
+}*/
+.CX2 .cellSlot .slotTitle {
+  font-size: 3.6em !important;
+  font-weight: 200 !important;
+  top: -10px;
+}
+/*center and color date number  */
+.CX2 .slotHeader {
+    display: block;
+}
+div.today div.slotHeader {
+    display: block;
+
+}
+div.today div.slotHeader div.slotTitle {
+    color:red;
     font-weight: 300 !important;
-    top:-10px !important;
-         position:relative;
+}
+div.slotHeader div.slotTitle { /*move numbers up a bit more*/
+  font-weight: 300 !important;
+  top:-10px !important;
+       position:relative;
+}
+.slotHeader {background: none !important;}
+.slotContent { background: none !important;}
+/*day of week*/
+.slotSubTitle{
+    font-size: 4em !important;
+    position: relative;
+    top: -105px;
+    font-weight:100
+}
+.slotAltTitle {
+    font-size: 4em !important;
+    position: relative;
+    top: -150px;
+    font-weight:100
+
+}
+/*move calendar down*/
+.CX2.shown {
+    margin-top: 100px;
   }
-  .slotHeader {background: none !important;}
-  .slotContent { background: none !important;}
-  /*day of week*/
-  .slotSubTitle{
-      font-size: 4em !important;
-      position: relative;
-      top: -105px;
-      font-weight:100
+
+  /*fix first day of last month and first day of this month*/
+  .CX2 .cellSlot.firstCell .slotAltTitle, .CX2 .cellSlot.day_1 .slotAltTitle, .CX2 .cellSlot.daySeq_0 .slotAltTitle {
+    display: none;
+}
+.CX2 .cellSlot.firstCell .slotTitle, .CX2 .cellSlot.day_1 .slotTitle, .CX2 .cellSlot.daySeq_0 .slotTitle {
+    display: block;
+}
+div.seq_3 .timeline { /*never show the bottom calendar line*/
+  border-bottom:none
+}
+/*move name of Month up*/
+.CX2 .monthViewTitle{
+    font-weight: 100;
+    text-align: center;
+    position: relative;
+    top:-160px;
+}
+
+.CX2 .event.passed::before { /* If you don't want to passed pattern, overwrite this */
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:none !important;
   }
-  .slotAltTitle {
-      font-size: 4em !important;
-      position: relative;
-      top: -150px;
-      font-weight:100
+.CX2 .eventTitle{
+  /*font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;*/
+  /*font-weight:500;
+  font-family: SF;*/
+
+ /* font-size:1.1em;*/
+}
+
+  /*---1st day of month is name---*/
+  .day_1 .slotTitle {
+    position:relative;
+    color :black
+
+}
+.day_1 .slotTitle:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  color:white;
+}
+.day_1.today div.slotHeader div.slotTitle{ /*hide red number if it's 1st of mo */
+    color:transparent;
+}
+.day_1.today div.slotHeader div.slotTitle:after{ /*make MON-# red if it's 1st of mo*/
+    color:red;
+}
+.month_1.day_1 .slotTitle:after {
+    content: "Jan 1";
+  }
+.month_2.day_1 .slotTitle:after {
+  content: "Feb 1";
+}
+.month_3.day_1 .slotTitle:after {
+    content: "Mar 1";
+  }
+  .month_4.day_1 .slotTitle:after {
+    content: "Apr 1";
+  }
+  .month_5.day_1 .slotTitle:after {
+    content: "May 1";
+  }
+  .month_6.day_1 .slotTitle:after {
+    content: "Jun 1";
+  }
+  .month_7.day_1 .slotTitle:after {
+    content: "Jul 1";
+  }
+  .month_8.day_1 .slotTitle:after {
+    content: "Aug 1";
+  }
+  .month_9.day_1 .slotTitle:after {
+    content: "Sep 1";
+  }
+  .month_10.day_1 .slotTitle:after {
+    content: "Oct 1";
+  }
+  .month_11.day_1 .slotTitle:after {
+    content: "Nov 1";
+  }
+  .month_12.day_1 .slotTitle:after {
+    content: "Dec 1";
+  }
+
+img.splosion{
+  position:relative;
+}
+   /*flaying whatever start*/
+
+/*hello world*/
+
+div.helloworld {
+  position: relative;
+}
+div.helloworld a {
+  display: block;
+  position: relative;
+  left: 100%;
+  color: grey;
+  text-decoration: none;
+  font-size: .5em;
+  top: 10%;
+}
+
+   .flier {
+    pointer-events: none;
+  }
   
-  }
-  /*move calendar down*/
-  .CX2.shown {
-      margin-top: 100px;
-    }
-  
-    /*fix first day of last month and first day of this month*/
-    .CX2 .cellSlot.firstCell .slotAltTitle, .CX2 .cellSlot.day_1 .slotAltTitle, .CX2 .cellSlot.daySeq_0 .slotAltTitle {
-      display: none;
-  }
-  .CX2 .cellSlot.firstCell .slotTitle, .CX2 .cellSlot.day_1 .slotTitle, .CX2 .cellSlot.daySeq_0 .slotTitle {
-      display: block;
-  }
-  div.seq_3 .timeline { /*never show the bottom calendar line*/
-    border-bottom:none
-  }
-  /*move name of Month up*/
-  .CX2 .monthViewTitle{
-      font-weight: 100;
-      text-align: center;
-      position: relative;
-      top:-160px;
-  }
-  
-  .CX2 .event.passed::before { /* If you don't want to passed pattern, overwrite this */
-      content:"";
-      position:absolute;
-      width:100%;
-      height:100%;
-      top:0;
-      left:0;
-      right:0;
-      bottom:0;
-      background:none !important;
-    }
-  .CX2 .eventTitle{
-    /*font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;*/
-    /*font-weight:500;
-    font-family: SF;*/
-  
-   /* font-size:1.1em;*/
-  }
-  
-    /*---1st day of month is name---*/
-    .day_1 .slotTitle {
-      position:relative;
-      color :black
-  
-  }
-  .day_1 .slotTitle:after {
-    position: absolute;
+  .flier > * {
+  /* Adjust animation duration to change the element’s speed */
+          animation: fly 15s linear 1;
+          pointer-events: none !important;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: black;
-    color:white;
-  }
-  .day_1.today div.slotHeader div.slotTitle{ /*hide red number if it's 1st of mo */
-      color:transparent;
-  }
-  .day_1.today div.slotHeader div.slotTitle:after{ /*make MON-# red if it's 1st of mo*/
-      color:red;
-  }
-  .month_1.day_1 .slotTitle:after {
-      content: "Jan 1";
-    }
-  .month_2.day_1 .slotTitle:after {
-    content: "Feb 1";
-  }
-  .month_3.day_1 .slotTitle:after {
-      content: "Mar 1";
-    }
-    .month_4.day_1 .slotTitle:after {
-      content: "Apr 1";
-    }
-    .month_5.day_1 .slotTitle:after {
-      content: "May 1";
-    }
-    .month_6.day_1 .slotTitle:after {
-      content: "Jun 1";
-    }
-    .month_7.day_1 .slotTitle:after {
-      content: "Jul 1";
-    }
-    .month_8.day_1 .slotTitle:after {
-      content: "Aug 1";
-    }
-    .month_9.day_1 .slotTitle:after {
-      content: "Sep 1";
-    }
-    .month_10.day_1 .slotTitle:after {
-      content: "Oct 1";
-    }
-    .month_11.day_1 .slotTitle:after {
-      content: "Nov 1";
-    }
-    .month_12.day_1 .slotTitle:after {
-      content: "Dec 1";
-    }
-  
-  img.splosion{
-    position:relative;
-  }
-     /*flaying whatever start*/
-  
-  /*hello world*/
-  
-  div.helloworld {
-    position: relative;
-  }
-  div.helloworld a {
-    display: block;
-    position: relative;
-    left: 100%;
-    color: grey;
-    text-decoration: none;
-    font-size: .5em;
-    top: 10%;
+    transform: translateX(-120%) translateY(-120%) rotateZ(0);
+    position: fixed;
+    animation-delay: 1s;
+    z-index: 999999;
   }
   
-     .flier {
-      pointer-events: none;
-    }
-    
-    .flier > * {
-    /* Adjust animation duration to change the element’s speed */
-            animation: fly 15s linear 1;
-            pointer-events: none !important;
-      top: 0;
-      left: 0;
-      transform: translateX(-120%) translateY(-120%) rotateZ(0);
-      position: fixed;
-      animation-delay: 1s;
-      z-index: 999999;
-    }
-    
-     /* Keyframe values control where the element will begin
-        and end its trajectory across the screen. Each rule
-        represents a path the element follows across the screen. */
-    
-    
-        @keyframes fly {
-  
-          10%{
-           transform: translateX(-100vw) translateY(100vh) rotateZ(0deg) scaleX(-1)
-       /*start off screen to left*/
-          }
-       
-          30%{
-           transform:translateX(400%) translateY(20vh) rotateZ(0deg) scaleX(-1)
-           /*move off screen to right*/
-       
-          }
-          40%{
-           transform:translateX(400%) translateY(60vh) rotateZ(0deg) scaleX(1)
-               /*rotate off screen...don't move*/
-       
-          }
-               60%{
-           transform: translateX(-100vw) translateY(50vh) rotateZ(0deg) scaleX(1)
-              /*move off screen to left*/
-       
-       
-          }
-                  65%{
-           transform: translateX(-100vw) translateY(50vh) rotateZ(0deg) scaleX(-1)
-              /*move off screen to left*/
-          }
-                     100%{
-           transform: translateX(400%) translateY(100vh) rotateZ(0deg) scaleX(-1)
-              /*move off screen to left*/
-          }
-        
-         }
-       /*flaying whatever end*/
-       
-  
-   
-  /*---end---*/
+   /* Keyframe values control where the element will begin
+      and end its trajectory across the screen. Each rule
+      represents a path the element follows across the screen. */
   
   
-  
-  
-  
-    
-  /* Animation as suggested by Ismail Ghallou */
-  @keyframes glow {
-      to {
-       text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #d25ed4, 0 0 16px #d25ed4, 0 0 20px #d25ed4, 0 0 24px #d25ed4, 0 0 28px #d25ed4;
-      }
-    }
-    .month_2.day_2 .slotTitle{
-            text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 6px #292736, 0 0 8px #292736, 0 0 10px #292736, 0 0 12px #292736, 0 0 14px #292736;
-            animation: glow .59s infinite alternate;
-    }
-    
-  
-  
-  
-  /*-------------------------------------- countdown -----------------------------------*/
-  .MMM-CountDown .time {
-      font-size:1.1em
-  }
-  /*-------------------------------------- timer and timer form -----------------------------------*/
-  #StopwatchTimer {
-    top: 220px;
-    left: 20px;
-    width:540px;
-  }
-  #StopwatchTimer_TEXT {
-    width: 540px;
-  }
-  
-  div.timerForm table {
-    width:650px
-  }
-  div.timerForm {
-    width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 50px;
-  }
-  #timerButtonHolder {
-    background:#87bb8b;
-    width:200px;
-    border-radius:10px;
-    margin-top:30px;
-    color:white;
-    
-  }
-  
-  div#timerButtonHolder:focus {
-    background:green;
-    width:200px;
-    border-radius:10px;
-    margin-top:30px
-    
-  }
-  .value-button {
-    display: inline-block;
-    border: 1px solid #ddd;
-    margin: 0px;
-    width: 60px;
-    height: 50px;
-    text-align: center;
-    vertical-align: middle;
-    padding: 11px 0;
-    background: #eee;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  .value-button:hover {
-    cursor: pointer;
-  }
-  
-  div#decrease {
-    margin-right: -4px;
-    border-radius: 18px 0 0 18px;
-  }
-  
-  div#increase {
-    margin-left: -4px;
-    border-radius: 0 18px 18px 0;
-  }
-  
-  form #input-wrap {
-    margin: 0px;
-    padding: 0px;
-  }
-  
-  input.number {
-    text-align: center;
-    border: none;
-    /*border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;*/
-    margin: 0px;
-    width: 65px;
-    height: 74px;
-   font-size:1.2em
-  }
-  input.number:focus {outline:none!important;}
-  
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-  }
-  
-  
-  /*-------------------------------------- weather -----------------------------------*/
-  .weather .light{
-    font-size:2.5em
-  
-  }
-  div[id$='weather']:last-of-type header.module-header{
-    display:none !important;
-  }
-  div[id$='weather']:last-of-type table {
-    font-size:1.5em;
-    line-height:65px; /*squishiness of table*/
-    position: relative;
-    width: 560px;
-  }
-  .weather:nth-of-type(2){
-    top:10px;
-    position:relative;
-  }
-  
-  
-  
-  
-  .feelslike{
-    font-size: .8em;
-  }
-  div[id$='weather']:last-of-type .day{
-    padding-right:60px;
-    width:5px
-  }
-  .max-temp, .min-temp{
-    font-size:1.1em;
-    padding-left:0px;
-  }
-  
-  div[id$='weather']:last-of-type span.wi.weathericon{
-    font-size:1em;
-    position:relative;
-    top:5px;
-    display:block;
-    line-height:67px;
-  }
-  /*
-  div[id$='weather'] .weathericon{ 
-    display:none;
-  }*/
-  .weather .weathericon, .weather .fa-home { /*current weather icon*/
-    line-height: 95px;
-  }
-  
-  
-  span.wi.weathericon.wi-day-sunny {
-    color: #ff0;
-  }
-  span.wi.weathericon.wi-rain {
-  background: radial-gradient(at 50.0% 83%, #65c2dd 36.8%, #fff 38%); 
-   -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-  
-  }
-  span.wi.weathericon.wi-day-cloudy {
-  background: linear-gradient(45deg, white 58%, yellow 64%);
-  -webkit-background-clip: text;
-     background-clip: text;
-     color: transparent;
-     -webkit-text-fill-color: transparent; 
-     position: relative;
-     top: 5px;
-  }
-   .wi { /*parts of icons getting cutoff*/
-    line-height: inherit;
-  
-  }
-  
-  .currentweather header.module-header {
-    display: none !important;
-  }
-  .align-center {
-  text-align: center;
-  }
-  .weatherforecast td div.min-temp {
-  padding-left: 0px;
-  font-size:.9em;
-  }
-  td.align-center.max-temp { /*make the temp with degree sign look more centered*/
-  padding-left: 10px;
-  }
-  .weatherforecast .weather-icon-custom {
-  padding-right: 0px;
-  text-align: center;
-  }
-  .day-custom{
-    padding-left: 0;
-    padding-right: 0px;
-    text-align:center;
-  }
-  
-  /*
-  table.weatherDeets img {
-  width:200px;
-  padding-right:20px
-  }
-  
-  table.weatherDeets td{
-  padding-left:10px;
-  padding-bottom:20px;
-  vertical-align:top;
-  }
-  table.weatherDeets h2{
-  padding-left:0px;
-  vertical-align:top;
-  }
-  table.weatherDeets td.deets{
-  height:200px
-  }*/
-  /*div[id*="_weather"]:nth-of-type(1){height: 100px;}*/
-  div[id*="_weather"] .normal.medium {
-    position:relative;
-    top:40px;
-    left:50%;
-  }
-  
-  div[id*="_weather"] header.module-header {
-      /*  background:blue;
-    position:relative;
-        top:60px;
-    left:100%;*/
-    display: none !important;
-  }
-  div[id*="_weather"] .normal.feelslike {
-    position:relative;
-    top:-45px;
-    left:50%;
-  }
-  /*move bottom of weather up 30 px...*/
-  div.container > div.weather{
-    margin-bottom:-30px !important;
-  
-  }
-  /*...except for all but the first one*/
-  div.container > .weather ~ .weather{
-         margin-bottom:0px !important
-  
-  }
-  
-    /*---------------------------------------- clock -------------------------------------*/
-    .light{
-   
-        font-family: SF-UltraThin;
-      
-    }
-  
-    div[id*="_clock"] {
-        position: relative;
-        /*top:-100px;*/
-        margin-bottom: 0px;
-  
-  }
-  
-    .time.bright.large.light span{
-      font-size:.5em;
-  }
-  
-  .time.bright.large.light{
-      font-size:6em;
-      position:relative;
-      line-height: 150px;
-      /*left:-15px;*/
-      /*top:-153px;*//*-83px; changed due to Jan 2024 MM update*/
-      font-family: SF-Thin;
-          /*font-family:'Roboto', sans-serif;*/
+      @keyframes fly {
+
+        10%{
+         transform: translateX(-100vw) translateY(100vh) rotateZ(0deg) scaleX(-1)
+     /*start off screen to left*/
         }
-  .date.normal.medium{ /*Date*/
-      position:relative;
-      /*top:58px;*/
-      font-size:1.2em;
-      /*left:-8px;*/
-  }
-  div[id*='_clock'] {
-    padding-top: 40px;
-  }
-  .clock-grid span {/*am/pm*/
-  }
-  .clock-grid sup{ /*seconds*/
-      display:inline-block;
-      width:0px !important;
-  }
-  /*----------------------------------------  notifications ----------------------------*/
-  div.updatenotification div.module-content div{
-    font-size:1em;
-    position:relative;
-    top:0px;
-  }
-  /*div.updatenotification div.module-content div{
-    display:none;
-  }*/
-    
+     
+        30%{
+         transform:translateX(400%) translateY(20vh) rotateZ(0deg) scaleX(-1)
+         /*move off screen to right*/
+     
+        }
+        40%{
+         transform:translateX(400%) translateY(60vh) rotateZ(0deg) scaleX(1)
+             /*rotate off screen...don't move*/
+     
+        }
+             60%{
+         transform: translateX(-100vw) translateY(50vh) rotateZ(0deg) scaleX(1)
+            /*move off screen to left*/
+     
+     
+        }
+                65%{
+         transform: translateX(-100vw) translateY(50vh) rotateZ(0deg) scaleX(-1)
+            /*move off screen to left*/
+        }
+                   100%{
+         transform: translateX(400%) translateY(100vh) rotateZ(0deg) scaleX(-1)
+            /*move off screen to left*/
+        }
+      
+       }
+     /*flaying whatever end*/
+     
+
+ 
+/*---end---*/
+
+
+
+
+
   
-  
-  
-    
-  
-  
-  /*--------------------- wi fi icon ----------------------*/
-  div#module_3_MMM-network-signal {
-    position: absolute !important;
-    left: -10px;
-  }
-  
-  /**************************\
-    Basic Modal Styles
-  \**************************/
-  
-  .modal {
-  }
-  
-  .modal header{
-    text-transform:none;
-    border:none;
+/* Animation as suggested by Ismail Ghallou */
+@keyframes glow {
+    to {
+     text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #d25ed4, 0 0 16px #d25ed4, 0 0 20px #d25ed4, 0 0 24px #d25ed4, 0 0 28px #d25ed4;
     }
+  }
+  .month_2.day_2 .slotTitle{
+          text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 6px #292736, 0 0 8px #292736, 0 0 10px #292736, 0 0 12px #292736, 0 0 14px #292736;
+          animation: glow .59s infinite alternate;
+  }
+  
+
+
+
+/*-------------------------------------- countdown -----------------------------------*/
+.MMM-CountDown .time {
+    font-size:1.1em
+}
+/*-------------------------------------- timer and timer form -----------------------------------*/
+#StopwatchTimer {
+  top: 220px;
+  left: 20px;
+  width:540px;
+}
+#StopwatchTimer_TEXT {
+  width: 540px;
+}
+
+div.timerForm table {
+  width:650px
+}
+div.timerForm {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 50px;
+}
+#timerButtonHolder {
+  background:#87bb8b;
+  width:200px;
+  border-radius:10px;
+  margin-top:30px;
+  color:white;
+  
+}
+
+div#timerButtonHolder:focus {
+  background:green;
+  width:200px;
+  border-radius:10px;
+  margin-top:30px
+  
+}
+.value-button {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 60px;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.value-button:hover {
+  cursor: pointer;
+}
+
+div#decrease {
+  margin-right: -4px;
+  border-radius: 18px 0 0 18px;
+}
+
+div#increase {
+  margin-left: -4px;
+  border-radius: 0 18px 18px 0;
+}
+
+form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input.number {
+  text-align: center;
+  border: none;
+  /*border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;*/
+  margin: 0px;
+  width: 65px;
+  height: 74px;
+ font-size:1.2em
+}
+input.number:focus {outline:none!important;}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/*-------------------------------------- weather -----------------------------------*/
+.weather .light{
+  font-size:2.5em
+
+}
+div[id$='weather']:last-of-type header.module-header{
+  display:none !important;
+}
+div[id$='weather']:last-of-type table {
+  font-size:1.5em;
+  line-height:65px; /*squishiness of table*/
+  position: relative;
+  width: 560px;
+}
+.weather:nth-of-type(2){
+  top:10px;
+  position:relative;
+}
+
+
+
+
+.feelslike{
+  font-size: .8em;
+}
+div[id$='weather']:last-of-type .day{
+  padding-right:60px;
+  width:5px
+}
+.max-temp, .min-temp{
+  font-size:1.1em;
+  padding-left:0px;
+}
+
+div[id$='weather']:last-of-type span.wi.weathericon{
+  font-size:1em;
+  position:relative;
+  top:5px;
+  display:block;
+  line-height:67px;
+}
+/*
+div[id$='weather'] .weathericon{ 
+  display:none;
+}*/
+.weather .weathericon, .weather .fa-home { /*current weather icon*/
+  line-height: 95px;
+}
+
+
+span.wi.weathericon.wi-day-sunny {
+  color: #ff0;
+}
+span.wi.weathericon.wi-rain {
+background: radial-gradient(at 50.0% 83%, #65c2dd 36.8%, #fff 38%); 
+ -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+}
+span.wi.weathericon.wi-day-cloudy {
+background: linear-gradient(45deg, white 58%, yellow 64%);
+-webkit-background-clip: text;
+   background-clip: text;
+   color: transparent;
+   -webkit-text-fill-color: transparent; 
+   position: relative;
+   top: 5px;
+}
+ .wi { /*parts of icons getting cutoff*/
+  line-height: inherit;
+
+}
+
+.currentweather header.module-header {
+  display: none !important;
+}
+.align-center {
+text-align: center;
+}
+.weatherforecast td div.min-temp {
+padding-left: 0px;
+font-size:.9em;
+}
+td.align-center.max-temp { /*make the temp with degree sign look more centered*/
+padding-left: 10px;
+}
+.weatherforecast .weather-icon-custom {
+padding-right: 0px;
+text-align: center;
+}
+.day-custom{
+  padding-left: 0;
+  padding-right: 0px;
+  text-align:center;
+}
+
+/*
+table.weatherDeets img {
+width:200px;
+padding-right:20px
+}
+
+table.weatherDeets td{
+padding-left:10px;
+padding-bottom:20px;
+vertical-align:top;
+}
+table.weatherDeets h2{
+padding-left:0px;
+vertical-align:top;
+}
+table.weatherDeets td.deets{
+height:200px
+}*/
+/*div[id*="_weather"]:nth-of-type(1){height: 100px;}*/
+div[id*="_weather"] .normal.medium {
+  position:relative;
+  top:40px;
+  left:50%;
+}
+
+div[id*="_weather"] header.module-header {
+    /*  background:blue;
+  position:relative;
+      top:60px;
+  left:100%;*/
+  display: none !important;
+}
+div[id*="_weather"] .normal.feelslike {
+  position:relative;
+  top:-45px;
+  left:50%;
+}
+/*move bottom of weather up 30 px...*/
+div.container > div.weather{
+  margin-bottom:-30px !important;
+
+}
+/*...except for all but the first one*/
+div.container > .weather ~ .weather{
+       margin-bottom:0px !important
+
+}
+
+  /*---------------------------------------- clock -------------------------------------*/
+  .light{
+ 
+      font-family: SF-UltraThin;
     
-  .modal__overlay {
-   position: fixed;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   background: rgba(0,0,0,0.6);
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  }
+
+  div[id*="_clock"] {
+      position: relative;
+      /*top:-100px;*/
+      margin-bottom: 0px;
+
+}
+
+  .time.bright.large.light span{
+    font-size:.5em;
+}
+
+.time.bright.large.light{
+    font-size:6em;
+    position:relative;
+    line-height: 150px;
+    /*left:-15px;*/
+    /*top:-153px;*//*-83px; changed due to Jan 2024 MM update*/
+    font-family: SF-Thin;
+        /*font-family:'Roboto', sans-serif;*/
+      }
+.date.normal.medium{ /*Date*/
+    position:relative;
+    /*top:58px;*/
+    font-size:1.2em;
+    /*left:-8px;*/
+}
+div[id*='_clock'] {
+  padding-top: 40px;
+}
+.clock-grid span {/*am/pm*/
+}
+.clock-grid sup{ /*seconds*/
+    display:inline-block;
+    width:0px !important;
+}
+/*----------------------------------------  notifications ----------------------------*/
+div.updatenotification div.module-content div{
+  font-size:1em;
+  position:relative;
+  top:0px;
+}
+/*div.updatenotification div.module-content div{
+  display:none;
+}*/
+  
+
+
+
+  
+
+
+/*--------------------- wi fi icon ----------------------*/
+div#module_3_MMM-network-signal {
+  position: absolute !important;
+  left: -10px;
+}
+
+/**************************\
+  Basic Modal Styles
+\**************************/
+
+.modal {
+}
+
+.modal header{
+  text-transform:none;
+  border:none;
   }
   
-  .modal__container {
-   background-color: #fff;
-   padding: 30px;
-   max-width: 1700px;
-   max-height: 100vh;
-   border-radius: 34px;
-   overflow-y: auto;
-   box-sizing: border-box;
-   background-image: linear-gradient(to bottom, #607d8b 120px, white 10%); /* Standard syntax (must be last) */
-  width:1100px;
-  }
-  
-  .modal__header {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   font-family: SF;
-  }
-  
-  .modal__title {
-   margin-top: 0;
-   margin-bottom: 0;
-   font-weight: 600;
-   font-size: 4rem;
-   line-height: 1.25;
-   color: #fff;
-   box-sizing: border-box;
-  }
-  
-  .modal-time {font-size: 1.1em;}
-  
-  .modal-description{
-    font-size:.8em;
-    padding-top:40px
-   }
-  
-  .modal__close {
-   background: transparent;
-   border: 0;
-   font-size:2.5em;
-   color:white;
-  }
-  
-  .modal__header .modal__close:before { content: "\2715"; }
-  
-  .modal__content {
-   margin-top: 2rem;
-   margin-bottom: 2rem;
-   line-height: 1.5;
-   color: rgba(0,0,0,.8);
-   max-height:1000px;
-   overflow:scroll;
-  }
-  
-  .modal__btn {
-   font-size: .875rem;
-   padding-left: 1rem;
-   padding-right: 1rem;
-   padding-top: .5rem;
-   padding-bottom: .5rem;
-   background-color: #e6e6e6;
-   color: rgba(0,0,0,.8);
-   border-radius: .25rem;
-   border-style: none;
-   border-width: 0;
-   cursor: pointer;
-   -webkit-appearance: button;
-   text-transform: none;
-   overflow: visible;
-   line-height: 1.15;
-   margin: 0;
-   will-change: transform;
-   -moz-osx-font-smoothing: grayscale;
-   -webkit-backface-visibility: hidden;
-   backface-visibility: hidden;
-   -webkit-transform: translateZ(0);
-   transform: translateZ(0);
-   transition: -webkit-transform .25s ease-out;
-   transition: transform .25s ease-out;
-   transition: transform .25s ease-out,-webkit-transform .25s ease-out;
-  }
-  
-  .modal__btn:focus, .modal__btn:hover {
-   -webkit-transform: scale(1.05);
-   transform: scale(1.05);
-  }
-  
-  .modal__btn-primary {
-   background-color: #00449e;
-   color: #fff;
-  }
-  
-  button.system-btn {
-    padding: 20px;
-    margin: 20px;
-    font-size: 1.5em;
-    border-radius: 10px;
-    align-items: center;
-    align-content: center;
-    width: 96%;
-  }
-  
-  button.ok-btn {
-    background-color: #cd4e4e;
-    color: white;
-  }
-  
-  /**************************\
-   Demo Animation Style
-  \**************************/
-  @keyframes mmfadeIn {
-     from { opacity: 0; }
-       to { opacity: 1; }
-  }
-  
-  @keyframes mmfadeOut {
-     from { opacity: 1; }
-       to { opacity: 0; }
-  }
-  
-  @keyframes mmslideIn {
-   from { transform: translateY(15%); }
-     to { transform: translateY(0); }
-  }
-  
-  @keyframes mmslideOut {
-     from { transform: translateY(0); }
-     to { transform: translateY(-10%); }
-  }
-  
-  .micromodal-slide {
-   display: none;
-  }
-  
-  .micromodal-slide.is-open {
-   display: block;
-  }
-  
-  /*.micromodal-slide[aria-hidden="false"] .modal__overlay {
-   animation: mmfadeIn .1s cubic-bezier(0.0, 0.0, 0.2, 1);
-  }*/
-  
-  .micromodal-slide[aria-hidden="false"] .modal__container {
-   animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
-  }
-  
-  .micromodal-slide[aria-hidden="true"] .modal__overlay {
-   animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
-  }
-  
-  .micromodal-slide[aria-hidden="true"] .modal__container {
-   animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
-  }
-  
-  .micromodal-slide .modal__container,
-  .micromodal-slide .modal__overlay {
-   will-change: transform,;
-  }
-  
-  .hidden{
-    display: none;
-  }
+.modal__overlay {
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: rgba(0,0,0,0.6);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.modal__container {
+ background-color: #fff;
+ padding: 30px;
+ max-width: 1700px;
+ max-height: 100vh;
+ border-radius: 34px;
+ overflow-y: auto;
+ box-sizing: border-box;
+ background-image: linear-gradient(to bottom, #607d8b 120px, white 10%); /* Standard syntax (must be last) */
+width:1100px;
+}
+
+.modal__header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ font-family: SF;
+}
+
+.modal__title {
+ margin-top: 0;
+ margin-bottom: 0;
+ font-weight: 600;
+ font-size: 4rem;
+ line-height: 1.25;
+ color: #fff;
+ box-sizing: border-box;
+}
+
+.modal-time {font-size: 1.1em;}
+
+.modal-description{
+  font-size:.8em;
+  padding-top:40px
+ }
+
+.modal__close {
+ background: transparent;
+ border: 0;
+ font-size:2.5em;
+ color:white;
+}
+
+.modal__header .modal__close:before { content: "\2715"; }
+
+.modal__content {
+ margin-top: 2rem;
+ margin-bottom: 2rem;
+ line-height: 1.5;
+ color: rgba(0,0,0,.8);
+ max-height:1000px;
+ overflow:scroll;
+}
+
+.modal__btn {
+ font-size: .875rem;
+ padding-left: 1rem;
+ padding-right: 1rem;
+ padding-top: .5rem;
+ padding-bottom: .5rem;
+ background-color: #e6e6e6;
+ color: rgba(0,0,0,.8);
+ border-radius: .25rem;
+ border-style: none;
+ border-width: 0;
+ cursor: pointer;
+ -webkit-appearance: button;
+ text-transform: none;
+ overflow: visible;
+ line-height: 1.15;
+ margin: 0;
+ will-change: transform;
+ -moz-osx-font-smoothing: grayscale;
+ -webkit-backface-visibility: hidden;
+ backface-visibility: hidden;
+ -webkit-transform: translateZ(0);
+ transform: translateZ(0);
+ transition: -webkit-transform .25s ease-out;
+ transition: transform .25s ease-out;
+ transition: transform .25s ease-out,-webkit-transform .25s ease-out;
+}
+
+.modal__btn:focus, .modal__btn:hover {
+ -webkit-transform: scale(1.05);
+ transform: scale(1.05);
+}
+
+.modal__btn-primary {
+ background-color: #00449e;
+ color: #fff;
+}
+
+button.system-btn {
+  padding: 20px;
+  margin: 20px;
+  font-size: 1.5em;
+  border-radius: 10px;
+  align-items: center;
+  align-content: center;
+  width: 96%;
+}
+
+button.ok-btn {
+  background-color: #cd4e4e;
+  color: white;
+}
+
+.wizard-settings-container{
+background-image:none;
+width:1700px;
+max-width: 1700px;
+height: 1400px;
+max-height: 1400px;
+overflow: hidden;
+}
+
+.wizard-settings-content{
+height:1400px;
+max-height: 1400px;
+margin-top:0px;
+}
+.wizard-settings-header{
+display: none; 
+}
+/**************************\
+ Demo Animation Style
+\**************************/
+@keyframes mmfadeIn {
+   from { opacity: 0; }
+     to { opacity: 1; }
+}
+
+@keyframes mmfadeOut {
+   from { opacity: 1; }
+     to { opacity: 0; }
+}
+
+@keyframes mmslideIn {
+ from { transform: translateY(15%); }
+   to { transform: translateY(0); }
+}
+
+@keyframes mmslideOut {
+   from { transform: translateY(0); }
+   to { transform: translateY(-10%); }
+}
+
+.micromodal-slide {
+ display: none;
+}
+
+.micromodal-slide.is-open {
+ display: block;
+}
+
+/*.micromodal-slide[aria-hidden="false"] .modal__overlay {
+ animation: mmfadeIn .1s cubic-bezier(0.0, 0.0, 0.2, 1);
+}*/
+
+.micromodal-slide[aria-hidden="false"] .modal__container {
+ animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__overlay {
+ animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__container {
+ animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+ will-change: transform,;
+}
+
+.hidden{
+  display: none;
+}
